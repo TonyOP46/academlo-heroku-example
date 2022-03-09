@@ -11,6 +11,12 @@ const sequelize = new Sequelize({
   port: 5432,
   database: process.env.DB, // example
   dialect: 'postgres',
+  dialectOptions: {
+     		ssl: {
+     			require: true,
+     			rejectUnauthorized: false,
+    		},
+     	},
   logging: false
 });
 
